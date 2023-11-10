@@ -10,6 +10,7 @@ import { useMedia } from '@/hooks/use-media';
 import { Form } from '@/components/ui/form';
 import { Text } from '@/components/ui/text';
 import { routes } from '@/config/routes';
+import { BsArrowLeft } from 'react-icons/bs';
 import {
   forgetPasswordSchema,
   ForgetPasswordSchema,
@@ -53,23 +54,22 @@ export default function ForgetPasswordForm() {
               size={isMedium ? 'lg' : 'xl'}
               label="Email"
               placeholder="Enter your email"
-              className="[&>label>span]:font-medium"
+              className="[&>label>span]:text-[14px]"
               color="info"
               {...register('email')}
               error={errors.email?.message}
             />
             <Button
-              className="w-full"
+              className="w-full bg-[#344054] text-[14px]"
               type="submit"
               size={isMedium ? 'lg' : 'xl'}
-              color="info"
             >
-              Reset Password
+              Send password reset link
             </Button>
           </div>
         )}
       </Form>
-      <Text className="mt-6 text-center text-[15px] leading-loose text-gray-500 lg:mt-9 xl:text-base">
+      {/* <Text className="mt-6 text-center text-[15px] leading-loose text-gray-500 lg:mt-9 xl:text-base">
         Don’t want to reset?{' '}
         <Link
           href={routes.auth.signUp5}
@@ -77,7 +77,17 @@ export default function ForgetPasswordForm() {
         >
           Sign Up
         </Link>
-      </Text>
+      </Text> */}
+
+      <Link
+        href={routes.auth.signIn5}
+        className="font-semibold text-gray-700 transition-colors hover:text-primary"
+      >
+        <div className="mt-6 flex items-center text-[14px] leading-loose text-[#4B5563] lg:mt-9">
+          <BsArrowLeft className="me-2 text-[18px]" />
+          Back to login
+        </div>
+      </Link>
     </div>
   );
 }

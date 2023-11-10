@@ -11,6 +11,7 @@ import { Text } from '@/components/ui/text';
 import { Form } from '@/components/ui/form';
 import { routes } from '@/config/routes';
 import { loginSchema, LoginSchema } from '@/utils/validators/login.schema';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const initialValues: LoginSchema = {
   email: 'admin@admin.com',
@@ -42,7 +43,7 @@ export default function SignInForm() {
               label="Email"
               placeholder="Enter your email"
               color="info"
-              className="[&>label>span]:font-medium"
+              className="[&>label>span]:text-[14px]"
               {...register('email')}
               error={errors.email?.message}
             />
@@ -51,41 +52,40 @@ export default function SignInForm() {
               placeholder="Enter your password"
               size={isMedium ? 'lg' : 'xl'}
               color="info"
-              className="[&>label>span]:font-medium"
+              className="[&>label>span]:text-[14px]"
               {...register('password')}
               error={errors.password?.message}
             />
             <div className="flex items-center justify-between">
-              <Switch
-                variant="active"
-                label="Remember Me"
-                color="info"
-                className="[&>label>span]:font-medium [&>label]:my-1"
+              <Checkbox
+                label="Remember me"
+                size="sm"
                 {...register('rememberMe')}
+                className="[&>.rizzui-checkbox-container>.rizzui-checkbox-label]:ml-2 [&>.rizzui-checkbox-container>.rizzui-checkbox-label]:text-[14px] [&>.rizzui-checkbox-container]:text-[14px] [&>.rizzui-checkbox-container]:text-[#4b5563]"
               />
+
               <Link
                 href={routes.auth.forgotPassword5}
-                className="h-auto p-0 text-sm font-medium text-gray-900 underline transition-colors hover:text-primary hover:no-underline"
+                className="h-auto p-0 text-[14px] text-[#4B5563] transition-colors hover:no-underline"
               >
                 Forget Password?
               </Link>
             </div>
             <Button
-              className="w-full"
+              className="w-full bg-[#344054] text-[14px]"
               type="submit"
               size={isMedium ? 'lg' : 'xl'}
-              color="info"
             >
-              Sign In
+              Login
             </Button>
           </div>
         )}
       </Form>
-      <Text className="mt-6 text-center text-[15px] leading-loose text-gray-500 lg:mt-9 xl:text-base">
+      <Text className="mt-6 text-center text-[14px] leading-loose text-[#4B5563] lg:mt-9">
         Don’t have an account?{' '}
         <Link
           href={routes.auth.signUp5}
-          className="font-bold text-gray-700 transition-colors hover:text-primary"
+          className="font-bold text-[#4B5563] transition-colors"
         >
           Sign Up
         </Link>

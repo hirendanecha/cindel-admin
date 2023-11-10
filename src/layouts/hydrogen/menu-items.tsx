@@ -425,22 +425,22 @@ export const menuItems = [
     href: '#',
     icon: <PiShieldCheckDuotone />,
     dropdownItems: [
-      {
-        name: 'Modern Sign in',
-        href: routes.auth.signIn1,
-      },
-      {
-        name: 'Vintage Sign in',
-        href: routes.auth.signIn2,
-      },
-      {
-        name: 'Trendy Sign in',
-        href: routes.auth.signIn3,
-      },
-      {
-        name: 'Elegant Sign in',
-        href: routes.auth.signIn4,
-      },
+      // {
+      //   name: 'Modern Sign in',
+      //   href: routes.auth.signIn1,
+      // },
+      // {
+      //   name: 'Vintage Sign in',
+      //   href: routes.auth.signIn2,
+      // },
+      // {
+      //   name: 'Trendy Sign in',
+      //   href: routes.auth.signIn3,
+      // },
+      // {
+      //   name: 'Elegant Sign in',
+      //   href: routes.auth.signIn4,
+      // },
       {
         name: 'Classic Sign in',
         href: routes.auth.signIn5,
@@ -452,22 +452,22 @@ export const menuItems = [
     href: '#',
     icon: <PiLockKeyDuotone />,
     dropdownItems: [
-      {
-        name: 'Modern Forgot password',
-        href: routes.auth.forgotPassword1,
-      },
-      {
-        name: 'Vintage Forgot password',
-        href: routes.auth.forgotPassword2,
-      },
-      {
-        name: 'Trendy Forgot password',
-        href: routes.auth.forgotPassword3,
-      },
-      {
-        name: 'Elegant Forgot password',
-        href: routes.auth.forgotPassword4,
-      },
+      // {
+      //   name: 'Modern Forgot password',
+      //   href: routes.auth.forgotPassword1,
+      // },
+      // {
+      //   name: 'Vintage Forgot password',
+      //   href: routes.auth.forgotPassword2,
+      // },
+      // {
+      //   name: 'Trendy Forgot password',
+      //   href: routes.auth.forgotPassword3,
+      // },
+      // {
+      //   name: 'Elegant Forgot password',
+      //   href: routes.auth.forgotPassword4,
+      // },
       {
         name: 'Classic Forgot password',
         href: routes.auth.forgotPassword5,
