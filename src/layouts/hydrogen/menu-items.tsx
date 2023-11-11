@@ -464,13 +464,17 @@ export const menuItems = [
       //   name: 'Trendy Forgot password',
       //   href: routes.auth.forgotPassword3,
       // },
-      // {
-      //   name: 'Elegant Forgot password',
-      //   href: routes.auth.forgotPassword4,
-      // },
+      {
+        name: 'Elegant Forgot password',
+        href: routes.auth.forgotPassword4,
+      },
       {
         name: 'Classic Forgot password',
         href: routes.auth.forgotPassword5,
+      },
+      {
+        name: 'Create new password',
+        href: routes.auth.crateNewPassword,
       },
     ],
   },

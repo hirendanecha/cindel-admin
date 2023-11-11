@@ -107,6 +107,7 @@ export const routes = {
     forgotPassword3: '/auth/forgot-password-3',
     forgotPassword4: '/auth/forgot-password-4',
     forgotPassword5: '/auth/forgot-password-5',
+    crateNewPassword: '/auth/create-new-password',
     // OTP
     otp1: '/auth/otp-1',
     otp2: '/auth/otp-2',

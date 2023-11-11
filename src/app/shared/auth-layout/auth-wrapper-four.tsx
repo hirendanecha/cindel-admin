@@ -11,7 +11,9 @@ import { PiArrowLineRight, PiUserCirclePlus } from 'react-icons/pi';
 import { FcGoogle } from 'react-icons/fc';
 import OrSeparation from './or-separation';
 import { siteConfig } from '@/config/site.config';
-import { BsFacebook } from 'react-icons/bs';
+import { useMedia } from '@/hooks/use-media';
+import { BsArrowLeft } from 'react-icons/bs';
+import homeFront from '@public/home-front.png';
 
 function AuthNavLink({
   href,
@@ -41,18 +43,20 @@ function AuthNavLink({
 }
 
 export default function AuthWrapperFour({
-  children,
-  title,
+  // children,
+  // title,
   isSocialLoginActive = false,
   isSignIn = false,
   className = '',
 }: {
-  children: React.ReactNode;
-  title: React.ReactNode;
+  // children: React.ReactNode;
+  // title: React.ReactNode;
   isSocialLoginActive?: boolean;
   isSignIn?: boolean;
   className?: string;
 }) {
+  const isMedium = useMedia('(max-width: 1200px)', false);
+
   return (
     <div className="flex min-h-screen w-full flex-col justify-between">
       <AuthHeader />
@@ -64,18 +68,32 @@ export default function AuthWrapperFour({
             className
           )}
         >
-          <div className="flex flex-col items-center">
-            <Link href={'/'} className="mb-7 inline-block max-w-[64px] lg:mb-9">
-              <Image src={siteConfig.icon} alt={siteConfig.title} />
-            </Link>
+          <div className="mb-3 flex flex-col items-center text-center">
+            <div className="mb-7 inline-block h-[200px] w-[200px] rounded-lg lg:mb-9">
+              <Image
+                src={homeFront}
+                alt={siteConfig.title}
+                className="h-full w-full rounded-lg"
+              />
+            </div>
+
             <Title
               as="h2"
-              className="mb-7 text-center text-[28px] font-bold leading-snug md:text-3xl md:!leading-normal lg:mb-10 lg:text-4xl"
+              className="mb-1 text-[22px] font-bold text-[#333333]"
             >
-              {title}
+              Check your email
+            </Title>
+
+            <Title
+              as="h2"
+              className="mb-2 text-[16px] font-normal text-[#333333]"
+            >
+              We have sent you a password reset link. Use the link to reset your
+              password and add a new one.
             </Title>
           </div>
-          {isSocialLoginActive && (
+
+          {/* {isSocialLoginActive && (
             <>
               <div className="flex flex-col gap-4 pb-6 md:flex-row md:gap-6 xl:pb-7">
                 <Button className="h-11 w-full">
@@ -93,13 +111,33 @@ export default function AuthWrapperFour({
                 className="mb-5 2xl:mb-7"
               />
             </>
-          )}
+          )} */}
 
-          {children}
+          {/* {children} */}
+
+          <Button
+            className="mb-6 w-full bg-[#344054] text-[14px]"
+            type="button"
+            size={isMedium ? 'lg' : 'xl'}
+          >
+            Open email app
+          </Button>
+
+          <Link
+            href={routes.auth.signIn5}
+            className="font-semibold text-gray-700 transition-colors hover:text-primary"
+          >
+            <div className="flex items-center justify-center text-[14px] leading-loose text-[#4B5563]">
+              <BsArrowLeft className="me-2 text-[18px]" />
+              Back to login
+            </div>
+          </Link>
         </div>
       </div>
 
-      <AuthFooter />
+      {/* <AuthFooter /> */}
+
+      <div className="inline-block w-full" />
     </div>
   );
 }
@@ -115,7 +153,8 @@ function AuthHeader() {
           priority
         />
       </Link>
-      <div className="flex items-center space-x-2 md:space-x-4">
+
+      {/* <div className="flex items-center space-x-2 md:space-x-4">
         <AuthNavLink href={routes.auth.signIn4}>
           <PiArrowLineRight className="h-4 w-4" />
           <span>Login</span>
@@ -124,7 +163,7 @@ function AuthHeader() {
           <PiUserCirclePlus className="h-4 w-4" />
           <span>Sign Up</span>
         </AuthNavLink>
-      </div>
+      </div> */}
     </header>
   );
 }
